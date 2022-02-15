@@ -38,7 +38,7 @@ def webServer(port=13331):
                 # Send response message for file not found (404)
                 connectionSocket.send("404 Not Found".encode("utf-8"))
                 # Close client socket
-            connectionSocket.close()
+                connectionSocket.close()
 
         except (ConnectionResetError, BrokenPipeError):
             pass
