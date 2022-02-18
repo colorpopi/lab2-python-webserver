@@ -4,7 +4,7 @@ from socket import *
 import sys
 
 
-def webServer(port=80):
+def webServer(port=13331):
   serverSocket = socket(AF_INET, SOCK_STREAM)
   #Prepare a server socket
   serverSocket.bind(("", port))
@@ -52,4 +52,4 @@ def webServer(port=80):
       sys.exit()  # Terminate the program after sending the corresponding data
 
 if __name__ == "__main__":
-  webServer(80)
+  webServer(13331)
