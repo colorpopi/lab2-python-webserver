@@ -20,7 +20,7 @@ def webServer(port=13331):
     try:
 
       try:
-        message = serverSocket.recv(1024).decode()
+        message = connectionSocket.recv(1024).decode()
         filename = message.split()[1]
         f = open(filename[1:])
         outputdata = f.read()
@@ -45,6 +45,7 @@ def webServer(port=13331):
         #Close client socket
         #Fill in start
         connectionSocket.close()
+        serverSocket.close()
         #Fill in end
 
     except (ConnectionResetError, BrokenPipeError):
