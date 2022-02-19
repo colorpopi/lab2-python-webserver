@@ -4,7 +4,7 @@ from socket import *
 import sys
 
 
-def webServer(port=13331):
+def webServer(port=8080):
     serverSocket = socket(AF_INET, SOCK_STREAM)
     # Prepare a server socket
     serverSocket.bind(("", port))
@@ -50,9 +50,11 @@ def webServer(port=13331):
                 pass
 
         except (ConnectionResetError, BrokenPipeError):
-            serverSocket.close()
-            sys.exit()  # Terminate the program after sending the corresponding data
+            pass
+
+        serverSocket.close()
+        sys.exit()  # Terminate the program after sending the corresponding data
 
 
 if __name__ == "__main__":
-    webServer(13331)
+    webServer(8080)
