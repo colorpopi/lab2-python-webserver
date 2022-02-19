@@ -50,10 +50,11 @@ def webServer(port=8080):
                 pass
 
         except (ConnectionResetError, BrokenPipeError):
+            serverSocket.close()
             pass
 
-        serverSocket.close()
-        sys.exit()  # Terminate the program after sending the corresponding data
+    # serverSocket.close()
+    sys.exit()  # Terminate the program after sending the corresponding data
 
 
 if __name__ == "__main__":
